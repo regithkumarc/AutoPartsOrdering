@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './login';
 import * as serviceWorker from './serviceWorker';
+import RoutePath from './crud/routepath';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <RoutePath />
   </React.StrictMode>,
   document.getElementById('root')
 );
