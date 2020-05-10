@@ -1,0 +1,7 @@
+h4 {
+    display: inline-block;
+    font-size: 36px;
+    background: linear-gradient(to right, lightseagreen 0%, skyblue 50%, lightseagreen 50%,skyblue 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
