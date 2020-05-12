@@ -1,6 +1,5 @@
 import React from 'react'
 import {Form, FormGroup, Input, Label, Button} from 'reactstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css';
 import { checkUserExists, addUserDetails } from '../crud/userFuction';
 

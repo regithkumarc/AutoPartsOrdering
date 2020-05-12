@@ -5,16 +5,18 @@ import Login from './login';
 import Home from './home';
 import Parts from './parts';
 import Navbars from './navbars'
+import Register from './register';
 class AutoPartsRoute extends React.Component {
 
     render () {
         return (
-            <div className = "App">
+            <div>
                 <Router>
                     <Navbars></Navbars>
                     <Route exact path = "/" component = {Home}></Route>
-                    <div class="container">
+                    <div>
                         <Route exact path = "/login" component = {Login}></Route>
+                        <Route exact path = "/register" component = {Register}></Route>
                         <Route exact path = "/home" component = {Home}></Route>
                         <Route exact path = "/parts" component = {Parts}></Route>
                     </div>

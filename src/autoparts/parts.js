@@ -2,6 +2,8 @@ import React from 'react'
 import './parts.css'
 import $ from 'jquery'
 import SearchBar from './searchbar'
+import { Button } from 'reactstrap';
+import ModalPopup from './modalPopup';
 
 const imagePath = "https://image.tmdb.org/t/p/w185";
 
@@ -11,13 +13,27 @@ class Parts extends React.Component {
         super(props)
         this.performSearchItem("ant man");
 
+
         this.state = {
             movieArr: [],
-            searchVal: ""
+            searchVal: "",
+            show: false,
+            title: '',
+            overview: ''
         }
         this.performSearchItem = this.performSearchItem.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
+    toggle = item => {
+        //alert(!this.state.show)
+        console.log("e", item)
+        this.setState({
+            show: !this.state.show,
+            title: item.title,
+            overview: item.overview
+        });
+    }
 
     performSearchItem(searchItem) {
         console.log("perform search : ", searchItem)
@@ -57,6 +73,11 @@ class Parts extends React.Component {
                                 <td>
                                     <h3>{item.title}</h3>
                                     <p>{item.overview}</p>
+                                    <Button onClick={() => this.toggle(item)}>Details</Button>&nbsp;
+                                    <Button>AddToCart</Button>
+                                </td>
+                                <td>
+                                    <ModalPopup title={this.state.title} body={this.state.overview} show={this.state.show} toggle={this.toggle}></ModalPopup>
                                 </td>
                             </tr>
                         ))}
