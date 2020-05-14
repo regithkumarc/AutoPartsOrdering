@@ -18,8 +18,17 @@ function ModalPopup(props) {
                     Details
                     </ModalHeader>
                 <ModalBody>
-                    <h5>{props.title}</h5>
-                    <p>{props.body}</p>
+                    <table>
+                        <tr>
+                            {/* <td>
+                                <img width="120" src={props.imageURL} alt=""/>
+                            </td> */}
+                            <td>
+                                <h5>{props.title}</h5>
+                                <p>{props.body}</p>
+                            </td>
+                        </tr>
+                    </table>
                 </ModalBody>
                 <ModalFooter>
                     <Button onClick={props.toggle}>

@@ -29,7 +29,7 @@ class Navbars extends React.Component {
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <Link to= "/login" className="nav-link">Logout</Link>
+                        <b><Link id = "logout" to= "/login" className="nav-link">Logout</Link></b>
                     {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value = {this.state.searchName} onChange = {this.onChange} />
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
                     </form>

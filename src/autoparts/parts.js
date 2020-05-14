@@ -19,7 +19,8 @@ class Parts extends React.Component {
             searchVal: "",
             show: false,
             title: '',
-            overview: ''
+            overview: '',
+            imageURL : ''
         }
         this.performSearchItem = this.performSearchItem.bind(this);
         this.toggle = this.toggle.bind(this);
@@ -31,7 +32,8 @@ class Parts extends React.Component {
         this.setState({
             show: !this.state.show,
             title: item.title,
-            overview: item.overview
+            overview: item.overview,
+            imageURL : item.poster_src
         });
     }
 
@@ -77,7 +79,7 @@ class Parts extends React.Component {
                                     <Button>AddToCart</Button>
                                 </td>
                                 <td>
-                                    <ModalPopup title={this.state.title} body={this.state.overview} show={this.state.show} toggle={this.toggle}></ModalPopup>
+                                    <ModalPopup title={this.state.title} body={this.state.overview} imageURL = {this.state.imageURL} show={this.state.show} toggle={this.toggle}></ModalPopup>
                                 </td>
                             </tr>
                         ))}

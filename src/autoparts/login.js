@@ -1,7 +1,7 @@
 import React from 'react'
 import {Form, FormGroup, Input, Label, Button} from 'reactstrap'
 import './login.css';
-import { checkUserExists, addUserDetails } from '../crud/userFuction';
+import { checkUserExists } from '../crud/userFuction';
 
 class Login extends React.Component {
 
@@ -46,24 +46,29 @@ class Login extends React.Component {
         console.log("UserName : " ,user.userName)
         console.log("Password : " ,user.password)
         
-        let userExists = checkUserExists(user.userName);
-        console.log("User Msg : " ,userExists);
-
-        if(userExists){
-            alert("user is already exists");
-        }else{
-            let userMsg = addUserDetails(user);
-            console.log("User Msg : " ,userMsg)
-
-            if(userMsg === "Added Succesfully"){
+        if(user.userName !== "" && user.password !== ""){    
+            console.log("UserName : " ,user.userName)
+            console.log("Password : " ,user.password) 
+            let userExists = checkUserExists(user.userName); 
+            console.log("userExists : " ,userExists)
+        
+            if(userExists) {
+                console.log("Login Successfully")
                 this.props.history.push({
-                    pathname : '/employee',
+                    pathname : '/parts',
                     address : this.state.address,
                     privilagestatus : this.state.privilagestatus
                 })
+            } else{
+                alert("invalid User")
+            }     
+        }else{
+            if(user.userName === "" || user.userName === ''){
+                alert("UserName is Mandatory")
+            }else if(user.password === "" || user.password === ''){
+                alert("Password is Mandatory")
             }
         }
-        
     }
 
     render () {
@@ -80,6 +85,7 @@ class Login extends React.Component {
                         <Input type="text" placeholder="Password" name="password" id="password" value = {this.state.password} onChange = {this.onChange}/>  
                     </FormGroup>  
                     <Button value = "submit">Login</Button>
+                    {/* <Link to="/register" className = "nav-link">Register</Link> */}
                 </Form>
                 {/* <Employee address = {this.state.address} privilagestatus = {this.state.privilagestatus}></Employee> */}
             </div>
