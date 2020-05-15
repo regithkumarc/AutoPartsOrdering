@@ -1,53 +1,67 @@
 
 let userInfoList = [];
-function reloadUserData() {
-    return JSON.parse(localStorage.getItem('userInfo'))
+
+export function reloadUserDataCount() {
+    getAllUserItem();
+    return userInfoList.length;
+}
+
+export function getAllUserItem() {
+    userInfoList = [];
+    let value = JSON.parse(localStorage.getItem("userInfo"));
+    if (value != null && value.length > 0) {
+        for (let i = 0; i < value.length; i++) {
+            console.log("value[i]", value[i])
+            userInfoList.push(value[i]);
+        }
+    }
+    return userInfoList;
 }
 
 export function addUserDetails(user) {
-    const userInfo = reloadUserData();
-    console.log("UserInfo : ", userInfo)
-    let userArr = [];
-    if (userInfo) {
-        userArr = userInfo
-        userArr.push(user);
-        localStorage.setItem("userInfo", JSON.stringify(userArr))
+    getAllUserItem();
+    //console.log("UserInfo : ", userInfo)
+    //let userArr = [];
+    if (userInfoList != null && userInfoList.length > 0) {
+        //userArr = userInfo
+        userInfoList.push(user);
+        localStorage.setItem("userInfo", JSON.stringify(userInfoList))
         return "Added Succesfully";
     } else {
-        userArr = [];
-        userArr.push(user)
-        localStorage.setItem("userInfo", JSON.stringify(userArr))
+        userInfoList = [];
+        userInfoList.push(user)
+        localStorage.setItem("userInfo", JSON.stringify(userInfoList))
         return "Added Succesfully";
     }
 }
 
 export function registerUserDetails(user) {
-    const userInfo = reloadUserData();
-    console.log("UserInfo : ", userInfo)
-    let userArr = [];
-    if (userInfo) {
-        userArr = userInfo
-        userArr.push(user);
-        localStorage.setItem("userInfo", JSON.stringify(userArr))
+    getAllUserItem();
+    //console.log("UserInfo : ", userInfo)
+    //let userArr = [];
+    if (userInfoList != null && userInfoList.length > 0) {
+        //userArr = userInfo
+        userInfoList.push(user);
+        localStorage.setItem("userInfo", JSON.stringify(userInfoList))
         return "Registered Succesfully";
     } else {
-        userArr = [];
-        userArr.push(user)
-        localStorage.setItem("userInfo", JSON.stringify(userArr))
+        userInfoList = [];
+        userInfoList.push(user)
+        localStorage.setItem("userInfo", JSON.stringify(userInfoList))
         return "Registered Succesfully";
     }
 }
 
 export function checkUserExists(userName) {
-    const userInfo = reloadUserData();
+    getAllUserItem();
     console.log(userName)
-    console.log(userInfo)
-    const userCount = userInfo.length;
-    if (userInfo && userCount > 0) {
-        for (let i = 0; i < userCount; i++) {
-            if (userInfo[i].userName === userName) {
+    //console.log(userInfo)
+    //const userCount = userInfo.length;
+    if (userInfoList && userInfoList.length > 0) {
+        for (let i = 0; i < userInfoList.length; i++) {
+            if (userInfoList[i].userName === userName) {
                 console.log("Username : ", userName)
-                console.log("userArr[i].userName", userInfo[i].userName)
+                console.log("userArr[i].userName", userInfoList[i].userName)
                 return true;
             }
         }
@@ -57,7 +71,7 @@ export function checkUserExists(userName) {
 
 
 export function searchEmployeeDetails(searchName) {
-    const userInfo = reloadUserData();
+    const userInfo = getAllUserItem();
     console.log("SearchName : ", searchName)
     // Variable to hold the original version of the list
     let currentList = [];
