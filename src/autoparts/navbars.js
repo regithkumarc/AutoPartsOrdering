@@ -27,6 +27,12 @@ class Navbars extends React.Component {
                         <li class="nav-item">
                             <Link to="/parts" className="nav-link">Parts</Link>
                         </li>
+                        <li class="nav-item">
+                            <Link to="/cart" className="nav-link">Cart</Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link to="/orderedProduct" className="nav-link">OrderProduct</Link>
+                        </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <b><Link id = "logout" to= "/login" className="nav-link">Logout</Link></b>

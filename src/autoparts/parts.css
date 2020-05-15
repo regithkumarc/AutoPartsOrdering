@@ -33,3 +33,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.cart-icon {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  float : right;
+}

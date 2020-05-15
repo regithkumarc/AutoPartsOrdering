@@ -6,6 +6,8 @@ import Home from './home';
 import Parts from './parts';
 import Navbars from './navbars'
 import Register from './register';
+import Cart from './cart';
+import OrderedProduct from './orderedProduct';
 class AutoPartsRoute extends React.Component {
 
     render () {
@@ -19,6 +21,8 @@ class AutoPartsRoute extends React.Component {
                         <Route exact path = "/register" component = {Register}></Route>
                         <Route exact path = "/home" component = {Home}></Route>
                         <Route exact path = "/parts" component = {Parts}></Route>
+                        <Route exact path = "/cart" component = {Cart}></Route>
+                        <Route exact path = "/orderedProduct" component = {OrderedProduct}></Route>
                     </div>
                 </Router>
             </div>
