@@ -3,7 +3,7 @@ class OrderedProduct extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            orderedMsg : "",
+            orderedMsg : "No Product",
             orderedCount : ""
         }
     }

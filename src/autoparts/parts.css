@@ -35,8 +35,6 @@
 }
 
 .cart-icon {
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-  float : right;
+  width: 95%;
+  text-align: right;
 }

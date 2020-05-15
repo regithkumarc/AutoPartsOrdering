@@ -102,7 +102,7 @@ class Parts extends React.Component {
             <div>
                 <SearchBar
                     handleSearch={(event) => { this.performSearchItem(event.target.value) }}></SearchBar>
-                <div>
+                <div className = "cart-icon">
                     <IconButton aria-label="cart">
                         <StyledBadge badgeContent={this.state.cartCount} color="secondary">
                             <ShoppingCartIcon onClick={this.showCartUI} />
