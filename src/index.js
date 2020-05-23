@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import AutoPartsRoute from './autoparts/autoPartsRoute';
+import Forms from './reduxForm/form';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AutoPartsRoute />
+    <Forms />
   </React.StrictMode>,
   document.getElementById('root')
 );
