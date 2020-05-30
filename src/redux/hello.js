@@ -1,20 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { COUNTER_INCREMENT, COUNTER_DECREMENT } from './store'
-import axios from 'axios'
+//import axios from 'axios'
 
 //redux-thunk for middleware
-const fetchData = () => {
-    console.log("fetched");
-    return (dispatch,getState) => {
-        axios.get("https://jsonplaceholder.typicode.com/posts").then(result => {
-            //this.props.setData(result.data);
-            console.log("result.data : " , result.data)
-            console.log("getState : " , getState())
-            dispatch({type : 'setData',data : result.data})
-        })    
-    }
-}
+// const fetchData = () => {
+//     console.log("fetched");
+//     return (dispatch,getState) => {
+//         axios.get("https://jsonplaceholder.typicode.com/posts").then(result => {
+//             //this.props.setData(result.data);
+//             console.log("result.data : " , result.data)
+//             console.log("getState : " , getState())
+//             dispatch({type : 'setData',data : result.data})
+//         })    
+//     }
+// }
 
 class Hello extends React.Component {
 
@@ -56,6 +56,7 @@ class Hello extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log("hello mapStateToProps")
     // store state object 
     console.log("Store to Props calling")
     console.log("getdata : ",state.getData.data)
@@ -67,6 +68,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToState = (dispatch) => {
+    console.log("hello mapDispatchToState")
     return {
         increment : () =>  dispatch({ type: COUNTER_INCREMENT }),
         decrement: () => dispatch({ type: COUNTER_DECREMENT }),
@@ -75,7 +77,7 @@ const mapDispatchToState = (dispatch) => {
             console.log("setData : " , data)
             console.log("Dispatch to State calling")
             //dispatch({type : 'setData',data})
-            dispatch(fetchData())
+            //dispatch(fetchData())
         },
         removeData : () => {
             dispatch({type : 'removeData'})
@@ -85,4 +87,4 @@ const mapDispatchToState = (dispatch) => {
 
 export default connect(mapStateToProps, mapDispatchToState)(Hello);
 // 1st parameter get data from store and pass it to props to use child component
-//2nd parameter put data to store 
+// 2nd parameter put data to store 

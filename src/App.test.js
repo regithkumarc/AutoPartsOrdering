@@ -1,9 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { shallow } from 'enzyme';
+import TestFile from './testFile';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+it('snapshot test',() => {
+ const wrapper =  shallow(<TestFile name = "regith"></TestFile>);
+ const title = wrapper.find("p.testNameHeader").text();
+ expect(title).toBe("regith");
+
+ const clickButton = wrapper.find("button");
+ clickButton.simulate("Click");
+}) 

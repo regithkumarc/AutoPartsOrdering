@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Forms from './reduxForm/form';
+import App from './basics/lifecycles/app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Forms />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
