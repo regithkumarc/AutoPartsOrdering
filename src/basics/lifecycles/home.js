@@ -53,7 +53,7 @@ class Home extends React.Component {
         return null;
     }
 
-    shouldComponentUpdate() {
+    shouldComponentUpdate(nextProps,nextState) {
         console.log("shouldComponentUpdate calling")
         return true;
     }

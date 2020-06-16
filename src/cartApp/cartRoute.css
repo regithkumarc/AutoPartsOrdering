@@ -1,0 +1,66 @@
+
+h2{
+    color: cadetblue;
+    background: linear-gradient(to right, lightseagreen 0%, cadetblue 50%, lightseagreen 50%,cadetblue   100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+header {
+    background-image: url('../images/shadow-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    position: relative;
+}
+
+.overlay {
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: rgba(10,10,10,0.3);
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 20px 0 60px; /* top | right| bottom | left */
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+li a {
+    padding: 5px;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+.cart-image ion-icon {
+    vertical-align: bottom;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.cart-image a {
+    background-color: cadetblue;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}

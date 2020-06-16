@@ -1,0 +1,12 @@
+#thegrid {
+    display: grid;
+    grid-template-columns: repeat(8, 5fr);
+    column-gap: 15px;
+    padding: 30px;
+  }
+
+#imageUploadButton {
+    position: absolute;
+    right: 10px;
+    margin: 10px;
+  }
