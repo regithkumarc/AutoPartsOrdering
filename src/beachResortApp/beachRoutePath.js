@@ -14,7 +14,7 @@ function BeachRoutePath() {
             <Navbars></Navbars>
                 <Route exact path="/" component={Home}></Route>
                 <div>
-                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/home" component={Home}></Route>
                     <Route exact path="/rooms" component={Rooms}></Route>
                     <Route exact path="/singleRoom" component={SingleRoom}></Route>
                     <Route exact path="/error" component={Error}></Route>

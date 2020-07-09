@@ -2,7 +2,8 @@
 import * as redux from 'redux'
 
 const initialState = {
-    count : 0
+    count : 0,
+    data : []
 }
 
 // Action
@@ -23,9 +24,29 @@ const countReducer = (state = initialState,action) => {
     }
 }
 
+const dataReducer = (state = [],action) => {
+    switch(action.type){
+        case "Push" : {
+            console.log("action value",action.value)
+            const data = [...state]
+            data.push(action.value)
+            return{...data}
+        }
+        case "Splice" : {
+            const data = [...state,state.data]
+            data.splice(0,action.value);
+            return{...state,data}
+        }
+        default : {
+            return state;
+        }
+    }
+}
+
 const rootReducer =(state = {},action) => {
     return {
-        counter : countReducer(state.counter,action)
+        counter : countReducer(state.counter,action),
+        data : dataReducer(state.data,action)
     }
 }
 

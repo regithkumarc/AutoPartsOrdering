@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import IncrementDecrement from './redux/reduxEx1/incrementDecrement';
+import App from './hooks/contextApi1/app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <IncrementDecrement />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

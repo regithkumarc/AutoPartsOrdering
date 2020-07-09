@@ -11,6 +11,7 @@ class Navbars extends React.Component {
     }
 
     handleToggle = () => {
+        console.log("handle toggle")
         this.setState({ isOpen: !this.state.isOpen })
     }
 
@@ -26,7 +27,7 @@ class Navbars extends React.Component {
                             <FaAlignRight className="nav-icon"></FaAlignRight>
                         </button>
                     </div>
-                    <ul className={this.state.isOpen ? "nav-links shownav" : "nav-links"}>
+                    <ul className={this.state.isOpen?"nav-links show-nav":"nav-links"}>
                         <li>
                             <Link to="/">Home</Link>
                         </li>

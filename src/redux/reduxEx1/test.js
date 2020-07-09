@@ -15,11 +15,25 @@ export const Test = () =>  {
         dispatch({type:COUNTER_DECREMENT})
     }
 
+    const push = () => {
+        dispatch({
+            type : "Push",
+            value : "Pushed 1"})
+    }
+
+    const splice = () => {
+        dispatch({
+            type : "Splice",
+            value : "Pushed 1 "})
+    }
+
     return(
         <div>
             {useStores.getState().counter.count}
             <button onClick = {increment}>Increment</button>
             <button onClick = {decrement}>Decrement</button>
+            <button onClick = {push}>Push</button>
+            <button onClick = {splice}>Slice</button>
         </div>
     )
 }

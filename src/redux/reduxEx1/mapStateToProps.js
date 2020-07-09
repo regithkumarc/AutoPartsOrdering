@@ -4,6 +4,7 @@ export const mapStateToProps = (state) => {
     // console.log("Store to Props calling")
     console.log("getdata : ",state.counter.count)
     return {
-        count: state.counter.count
+        count: state.counter.count,
+        data : state.data.data
     }
 }
