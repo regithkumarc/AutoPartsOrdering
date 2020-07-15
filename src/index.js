@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import App from './hooks/contextApi1/app';
+import AutoPartsRoute from './autoparts/autoPartsRoute';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AutoPartsRoute />
   </React.StrictMode>,
   document.getElementById('root')
 );

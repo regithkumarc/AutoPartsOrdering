@@ -6,7 +6,6 @@ class App extends React.Component {
 
     constructor() {
         super();
-
         this.state = {
             name:"regith",
             count:1
